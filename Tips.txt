@@ -1,0 +1,13 @@
+You can also create an anonymous class if you don't want to
+create multiple clasees.
+
+Thread.start(), to start threads.
+Thread.join(), returns after thread is finished. Needs a try/catch block.
+
+** When updating values in multiple threads, the value has to be read, updated,
+   then assigned back to the type for each update. So a thread may increase, a 
+   value but the other thread has read a previous value, and instead updates th
+   at previous value. A way to fix this is to create a synchronized method,
+   to update the value.
+	> Ex. public synchronized void Increment() { count ++; }
+	> Every object in Java has an intrinsic lock or monitor lock (mutex)
