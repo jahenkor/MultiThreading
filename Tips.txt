@@ -3,11 +3,22 @@ create multiple clasees.
 
 Thread.start(), to start threads.
 Thread.join(), returns after thread is finished. Needs a try/catch block.
-
+	- Allows one thread to wait until another thread completes its 
+          execution. 
+Synchronized Keyword
+====================
 ** When updating values in multiple threads, the value has to be read, updated,
    then assigned back to the type for each update. So a thread may increase, a 
    value but the other thread has read a previous value, and instead updates th
    at previous value. A way to fix this is to create a synchronized method,
    to update the value.
 	> Ex. public synchronized void Increment() { count ++; }
-	> Every object in Java has an intrinsic lock or monitor lock (mutex)
+	> Every object in Java has an intrinsic lock or monitor lock (mutex), so          synchronized makes sure only one method can have the instrinsic lock a          -t a time, so if one method is currently working on the object than
+           other threads cannot call it.
+
+ThreadPool
+==========
+
+ * Thread pools are like workers in a factory that can work on a given set of
+   tasks. If a worker is done with a task, it can start on the next available 
+   task
